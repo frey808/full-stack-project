@@ -1,0 +1,19 @@
+services:
+  - postgres:14
+
+variables:
+  POSTGRES_DB: db
+  POSTGRES_USER: user
+  POSTGRES_PASSWORD: unknown
+  PYTHON_RUN: python3
+
+before_script:
+  - pip install -r requirements.txt
+  - cp config/gitlab-credentials.yml config/db.yml
+
+testrunner:
+  script:
+    - echo "testing"
+    - $PYTHON_RUN --version
+    - $PYTHON_RUN -m unittest -v
+  stage: test
