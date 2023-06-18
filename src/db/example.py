@@ -10,3 +10,6 @@ def list_examples():
     DB layer call for listing all rows of our example.
     """
     return exec_get_all('SELECT id, foo FROM example_table')
+
+def number_query(id):
+    return id
