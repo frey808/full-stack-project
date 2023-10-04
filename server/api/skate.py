@@ -1,7 +1,7 @@
 from flask_restful import Resource, reqparse, request
 import json
 
-from db.skate import *
+from server.db_utils import *
 
 parser = reqparse.RequestParser()
 
